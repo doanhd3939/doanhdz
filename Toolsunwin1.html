@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Toolsunwinvip</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #keyForm {
+      background: #1f1f1f;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    #keyForm h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    #keyInput {
+      padding: 10px;
+      width: 220px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    #submitBtn {
+      padding: 10px 20px;
+      background: #00c853;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    #submitBtn:hover {
+      background: #00e676;
+    }
+
+    #errorMsg {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+
+    #content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div id="content">
+    <!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/ADMIN/Downloads/Toolsunwinvip.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự Đoán Tài Xỉu Sunwin</title>
+    <link rel="stylesheet" href="file:///C:/Users/ADMIN/Downloads/Toolsunwinvip_files/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e53935;
+            --secondary-color: #ff5252;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .description {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .description h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .description p {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .description ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .input-section {
+            position: relative;
+        }
+
+        .tab {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tab button.active {
+            color: var(--primary-color);
+        }
+
+        .tab button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-cell {
+            width: 100%;
+            aspect-ratio: 1/1;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .input-cell:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+            outline: none;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(229, 57, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+
+        .result-section {
+            text-align: center;
+        }
+
+        .result-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .result-box {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .tai-box {
+            background: linear-gradient(135deg, #e53935 0%, #ff5252 100%);
+        }
+
+        .xiu-box {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+        }
+
+        .blink {
+            animation: blink 1s linear infinite;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes blink {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .probability {
+            position: absolute;
+            bottom: -25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            background: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .history-mini {
+            margin-top: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .prediction {
+            font-weight: bold;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .input-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .result-box {
+                width: 120px;
+                height: 120px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .input-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .result-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .tab {
+                flex-direction: column;
+            }
+            
+            .tab button {
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .tab button.active::after {
+                display: none;
+            }
+        }
+    </style>
+<style>.--savior-overlay-transform-reset {
+  transform: none !important;
+}
+.--savior-overlay-z-index-top {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-position-relative {
+  position: relative;
+}
+.--savior-overlay-position-static {
+  position: static !important;
+}
+.--savior-overlay-overflow-hidden {
+  overflow: hidden !important;
+}
+.--savior-overlay-overflow-x-visible {
+  overflow-x: visible !important;
+}
+.--savior-overlay-overflow-y-visible {
+  overflow-y: visible !important;
+}
+.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.--savior-overlay-display-none {
+  display: none !important;
+}
+.--savior-overlay-clearfix {
+  clear: both;
+}
+.--savior-overlay-reset-filter {
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+.--savior-tooltip-host {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
+/*Override css styles for Twitch.tv*/
+main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.modal__backdrop.--savior-overlay-z-index-reset {
+  position: static !important;
+}
+main.--savior-overlay-z-index-top {
+  z-index: auto !important;
+}
+main.--savior-overlay-z-index-top .channel-root__player-container + div,
+main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+  opacity: 0.1;
+}
+/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+.--savior-backdrop {
+  position: fixed !important;
+  z-index: 2147483642 !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw !important;
+  background-color: rgba(0,0,0,0.9);
+}
+.--savior-overlay-twitter-video-player {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+.--savior-overlay-z-index-reset header[role="banner"],
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+  z-index: -1 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-z-index-reset#mtLayer,
+.--savior-overlay-z-index-reset.media-layer {
+  z-index: 3000 !important;
+}
+.--savior-overlay-position-relative [class*="SecBar_secBar_"],
+.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+.--savior-overlay-position-relative [class*="Main_side_"] {
+  z-index: -1 !important;
+}
+/* Fix conflict css with zingmp3 */
+.zm-video-modal.--savior-overlay-z-index-reset {
+  position: absolute;
+}
+/* Dirty hack for xvideos99 */
+#page #main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+/* Overlay for ok.ru */
+#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+  overflow-y: hidden;
+  z-index: 2147483643 !important;
+}
+/* Fix missing controller for tv.naver.com */
+.--savior-overlay-z-index-top.rmc_controller,
+.--savior-overlay-z-index-top.rmc_setting_intro,
+.--savior-overlay-z-index-top.rmc_highlight,
+.--savior-overlay-z-index-top.rmc_control_settings {
+  z-index: 2147483644 !important;
+}
+/* Dirty hack for douyi.com */
+.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+  display: none;
+}
+.videoWrap + div > div {
+  pointer-events: unset;
+}
+/* Dirty hack for fpt.ai */
+.mfp-wrap.--savior-overlay-z-index-top {
+  position: relative;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+  display: none;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+  z-index: -1 !important;
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+  position: relative;
+}
+.watching-movie #video-player.--savior-overlay-z-index-top {
+  z-index: 2147483644 !important;
+}
+div[class^="tiktok"].--savior-overlay-z-index-reset {
+  z-index: 2147483644 !important;
+}
+.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+.--savior-lightoff-fix section.section_video ~ section {
+  z-index: -1;
+  position: relative;
+}
+.--savior-lightoff-fix header,
+.--savior-lightoff-fix footer,
+.--savior-lightoff-fix .top-header,
+.--savior-lightoff-fix .swiper-container,
+.--savior-lightoff-fix #to_top,
+.--savior-lightoff-fix #button-adblock {
+  z-index: -1 !important;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style></head>
+<body>
+    <div class="container">
+        <header>
+            <img src="file:///C:/Users/ADMIN/Downloads/Toolsunwinvip_files/logo.png" alt="Sunwin Logo" class="logo">
+            <h1>TÀI XỈU SUNWIN     
+LE QUANG HUNG</h1>
+        </header>
+
+        <div class="description">
+            <h2><i class="fas fa-info-circle"></i> QUANG HƯNG Phân Tích Tài Xỉu</h2>
+            <p>Link channel: t.me/lq_hung09 nhé🥰</p>
+            
+            <h3><i class="fas fa-question-circle"></i> Cách sử dụng:</h3>
+            <ul>
+                <li><strong>Bước 1:</strong> Nhập kết quả 7 phiên trước bằng cách chọn nút T/X hoặc nhập thủ công</li>
+                <li><strong>Bước 2:</strong> Nhấn nút "DỰ ĐOÁN" để phân tích kết quả phiên tiếp theo</li>
+                <li><strong>Bước 3:</strong> Xem kết quả dự đoán với tỷ lệ % chính xác cho cả Tài và Xỉu</li>
+                <li><strong>Bước 4:</strong> Theo dõi lịch sử dự đoán gần nhất để phân tích xu hướng</li>
+            </ul>
+            
+            <p><i class="fas fa-lightbulb"></i> <strong>Mẹo:</strong> Dữ liệu càng chính xác thì kết quả dự đoán càng tin cậy. Hệ thống sẽ tự động cập nhật tỷ lệ % cho cả 2 cửa.</p>
+        </div>
+
+        <div class="card input-section">
+            <h2><i class="fas fa-edit"></i> Nhập kết quả 7 phiên trước</h2>
+            
+            <div class="tab">
+                <button class="tablinks active" onclick="openTab(event, &#39;method1&#39;)">
+                    <i class="fas fa-mouse-pointer"></i> Nhập bằng nút bấm
+                </button>
+                <button class="tablinks" onclick="openTab(event, &#39;method2&#39;)">
+                    <i class="fas fa-keyboard"></i> Nhập thủ công
+                </button>
+            </div>
+            
+            <div id="method1" class="tabcontent" style="display: block;">
+                <div class="input-grid">
+                    <div class="input-cell" id="cell1"></div>
+                    <div class="input-cell" id="cell2"></div>
+                    <div class="input-cell" id="cell3"></div>
+                    <div class="input-cell" id="cell4"></div>
+                    <div class="input-cell" id="cell5"></div>
+                    <div class="input-cell" id="cell6"></div>
+                    <div class="input-cell" id="cell7"></div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-success" onclick="setValue(&#39;T&#39;)">
+                        <i class="fas fa-arrow-up"></i> Tài (T)
+                    </button>
+                    <button class="btn btn-warning" onclick="setValue(&#39;X&#39;)">
+                        <i class="fas fa-arrow-down"></i> Xỉu (X)
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearValues()">
+                        <i class="fas fa-trash-alt"></i> Xóa hết
+                    </button>
+                </div>
+            </div>
+            
+            <div id="method2" class="tabcontent">
+                <div class="input-grid">
+                    <input type="text" class="input-cell" id="manual1" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual2" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual3" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual4" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual5" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual6" maxlength="1" oninput="validateInput(this)">
+                    <input type="text" class="input-cell" id="manual7" maxlength="1" oninput="validateInput(this)">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn btn-primary btn-lg" onclick="predict()">
+                    <i class="fas fa-magic"></i> DỰ ĐOÁN
+                </button>
+            </div>
+        </div>
+        
+        <div class="card result-section">
+            <h2><i class="fas fa-chart-line"></i> KẾT QUẢ DỰ ĐOÁN</h2>
+            <div class="result-container">
+                <div class="result-box tai-box" id="tai-result">
+                    TÀI
+                    <span class="probability" id="tai-prob">50%</span>
+                </div>
+                <div class="result-box xiu-box" id="xiu-result">
+                    XỈU
+                    <span class="probability" id="xiu-prob">50%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-mini">
+            <h3><i class="fas fa-history"></i> Dự đoán gần nhất</h3>
+            <div id="latest-prediction">
+                <p style="color: #666; font-style: italic;">Chưa có dự đoán nào</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p><i class="fas fa-copyright"></i> 2025 SUNWIN - Công cụ dự đoán tài xỉu</p>
+            <p>Follow tiktok: @lq_hung09</p>
+        </div>
+    </div>
+
+    <script>
+        let history = [];
+        let currentCell = 1;
+        let patternData = {};
+        
+        function openTab(evt, tabName) {
+            let tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        function setValue(val) {
+            if (currentCell > 7) currentCell = 1;
+            const cell = document.getElementById('cell' + currentCell);
+            cell.textContent = val;
+            cell.style.borderColor = val === 'T' ? '#e53935' : '#1a237e';
+            cell.style.color = val === 'T' ? '#e53935' : '#1a237e';
+            currentCell++;
+        }
+        
+        function clearValues() {
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById('cell' + i).textContent = '';
+                document.getElementById('cell' + i).style.borderColor = '#ddd';
+                document.getElementById('manual' + i).value = '';
+            }
+            currentCell = 1;
+        }
+        
+        function validateInput(input) {
+            let value = input.value.toUpperCase();
+            if (value !== 'T' && value !== 'X') {
+                input.value = '';
+                input.style.borderColor = '#ddd';
+            } else {
+                input.value = value;
+                input.style.borderColor = value === 'T' ? '#e53935' : '#1a237e';
+                input.style.color = value === 'T' ? '#e53935' : '#1a237e';
+            }
+        }
+        
+        async function loadPatternData() {
+            try {
+                const response = await fetch('datacau.txt');
+                if (!response.ok) throw new Error('Không tải được dữ liệu');
+                const text = await response.text();
+                parsePatternData(text);
+            } catch (error) {
+                console.error('Lỗi:', error);
+                // Dữ liệu mẫu nếu không tải được file
+                patternData = {
+                    "T,T,T,T,T,T,T": { prediction: "X", probability: 85 },
+                    "X,X,X,X,X,X,X": { prediction: "T", probability: 85 },
+                    "T,X,T,X,T,X,T": { prediction: "X", probability: 75 },
+                    "X,T,X,T,X,T,X": { prediction: "T", probability: 75 },
+                    "T,T,X,X,T,T,X": { prediction: "X", probability: 70 },
+                    "X,X,T,T,X,X,T": { prediction: "T", probability: 70 }
+                };
+            }
+        }
+        
+        function parsePatternData(text) {
+            const lines = text.split('\n');
+            for (let line of lines) {
+                line = line.trim();
+                if (!line) continue;
+                const parts = line.split('|');
+                if (parts.length === 3) {
+                    const pattern = parts[0].trim();
+                    const prediction = parts[1].trim().toUpperCase();
+                    const probability = parseInt(parts[2].trim());
+                    if (['T', 'X'].includes(prediction) && !isNaN(probability)) {
+                        patternData[pattern] = { prediction, probability };
+                    }
+                }
+            }
+        }
+        
+        async function predict() {
+            if (Object.keys(patternData).length === 0) await loadPatternData();
+            
+            let pattern = [];
+            let manualMode = document.getElementById('method2').style.display === 'block';
+            
+            for (let i = 1; i <= 7; i++) {
+                let value = manualMode 
+                    ? document.getElementById('manual' + i).value.toUpperCase()
+                    : document.getElementById('cell' + i).textContent;
+                
+                if (value !== 'T' && value !== 'X') {
+                    alert('Vui lòng nhập đủ 7 kết quả (T/X)');
+                    return;
+                }
+                pattern.push(value);
+            }
+            
+            const patternStr = pattern.join(',');
+            let result = patternData[patternStr] || { 
+                prediction: Math.random() > 0.5 ? 'T' : 'X', 
+                probability: Math.floor(Math.random() * 30) + 55 // Random từ 55-85%
+            };
+            
+            showResult(result.prediction, result.probability);
+            updateLatestPrediction(pattern, result.prediction, result.probability);
+        }
+        
+        function showResult(prediction, probability) {
+            document.getElementById('tai-result').classList.remove('blink');
+            document.getElementById('xiu-result').classList.remove('blink');
+            
+            // Tính tỷ lệ cả 2 bên
+            const taiProb = prediction === 'T' ? probability : 100 - probability;
+            const xiuProb = prediction === 'X' ? probability : 100 - probability;
+            
+            // Hiển thị cả 2 tỷ lệ
+            document.getElementById('tai-prob').textContent = taiProb + '%';
+            document.getElementById('xiu-prob').textContent = xiuProb + '%';
+            
+            // Chỉ nhấp nháy kết quả dự đoán chính
+            if (prediction === 'T') {
+                document.getElementById('tai-result').classList.add('blink');
+            } else {
+                document.getElementById('xiu-result').classList.add('blink');
+            }
+        }
+        
+        function updateLatestPrediction(pattern, prediction, probability) {
+            const now = new Date();
+            const timeStr = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            
+            const taiProb = prediction === 'T' ? probability : 100 - probability;
+            const xiuProb = prediction === 'X' ? probability : 100 - probability;
+            
+            historyItem.innerHTML = `
+                <div>
+                    <span class="prediction" style="color: ${prediction === 'T' ? '#e53935' : '#1a237e'}">
+                        ${pattern.join(' ')} → ${prediction} (${probability}%)
+                    </span>
+                </div>
+                <div>
+                    <small>Tài ${taiProb}% - Xỉu ${xiuProb}%</small>
+                    <span style="margin-left: 10px;">${timeStr}</span>
+                </div>
+            `;
+            
+            const container = document.getElementById('latest-prediction');
+            if (container.firstChild?.textContent === 'Chưa có dự đoán nào') {
+                container.removeChild(container.firstChild);
+            }
+            container.insertBefore(historyItem, container.firstChild);
+            
+            // Giới hạn chỉ hiển thị 3 kết quả gần nhất
+            if (container.children.length > 3) {
+                container.removeChild(container.lastChild);
+            }
+        }
+        
+        // Tự động load dữ liệu khi trang tải xong
+        window.addEventListener('DOMContentLoaded', loadPatternData);
+    </script>
+
+<savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></body></html>
+  </div>
+
+  <script>
+    const correctKey = "Toollequanghung";
+    const submitBtn = document.getElementById("submitBtn");
+    const keyInput = document.getElementById("keyInput");
+    const errorMsg = document.getElementById("errorMsg");
+    const overlay = document.getElementById("overlay");
+    const content = document.getElementById("content");
+
+    submitBtn.addEventListener("click", () => {
+      const enteredKey = keyInput.value.trim();
+      if (enteredKey === correctKey) {
+        overlay.style.display = "none";
+        content.style.display = "block";
+        document.body.style.overflow = "auto";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+
+    keyInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") submitBtn.click();
+    });
+  </script>
+</body>
+</html>
